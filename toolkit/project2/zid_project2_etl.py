@@ -140,8 +140,14 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
                             s = i
                             stop = True
             if stop:
-                if int(date[:4]) >= int(end[:4]):
-                    if int(date[5:7]) >= int(end[5:7]):
+                if int(date[:4]) > int(end[:4]):
+                    e = i
+                    break
+                elif int(date[:4]) == int(end[:4]):
+                    if int(date[5:7]) > int(end[5:7]):
+                        e = i
+                        break
+                    elif int(date[5:7]) == int(end[5:7]):
                         if int(date[8:10]) >= int(end[8:10]):
                             # print(end[8:10])
                             if date == end:
@@ -576,8 +582,6 @@ def _test_aj_ret_dict(tickers, start, end):
 
 
 if __name__ == "__main__":
-    # x = aj_ret_dict(tickers=['abbv', 'tsla'], start='2010-05-15', end='2010-08-31')
-    # print(x)
     pass
     # #test read_prc_csv function
     # _test_read_prc_csv()
@@ -591,8 +595,8 @@ if __name__ == "__main__":
     # # use made-up series to test daily_return_cal function
     # _test_monthly_return_cal()
     # # use AAPL prc series to test daily_return_cal function
-    ser_price = read_prc_csv(tic='AAPL', start='2020-08-31', end='2021-01-10')
-    _test_monthly_return_cal(made_up_data=False, ser_prc=ser_price)
+    # ser_price = read_prc_csv(tic='AAPL', start='2020-08-31', end='2021-01-10')
+    # _test_monthly_return_cal(made_up_data=False, ser_prc=ser_price)
     # # test aj_ret_dict function
-    _test_aj_ret_dict(['AAPL', 'aal'], start='2018-01-01', end='2020-08-05')
+    # _test_aj_ret_dict(['AAPL', 'aal'], start='2017-12-15', end='2020-08-05')
 

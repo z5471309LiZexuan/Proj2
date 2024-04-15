@@ -259,7 +259,7 @@ def get_cumulative_ret(df):
 #     You can utilize the three output files and auxiliary functions to answer the questions.
 DM_Ret_dict = etl.aj_ret_dict(tickers=cfg.TICKERS, start='2000-12-29', end='2021-08-31')
 Vol_Ret_mrg_df = cha.cha_main(DM_Ret_dict, 'vol', ['Daily',])
-
+Vol_Ret_mrg_df.sort_index(inplace=True)
 EW_LS_pf_df = pf.pf_main(df_cha=Vol_Ret_mrg_df, cha_name='vol', q=3)
 # print(EW_LS_pf_df)
 # print(result)
@@ -299,20 +299,20 @@ Q4_ANSWER = '0.05664'
 # Q5: What is the average monthly total volatility for stock 'TSLA' in the year 2010?
 #     Use the output dataframe, Vol_Ret_mrg_df, and auxiliary function in this script
 #     to do the calculation.
-# Vol_Ret_mrg_df['tsla_vol'].to_csv('1.csv')
-# print(get_avg(Vol_Ret_mrg_df, 2010))
-Q5_ANSWER = '0.02131'
+'''Vol_Ret_mrg_df['tsla_vol'].to_csv('1.csv')
+print(get_avg(Vol_Ret_mrg_df, 2010))'''
+Q5_ANSWER = '0.01725'
 
 
 # Q6: What is the ratio of the average monthly total volatility for stock 'V'
 #     in the year 2008 to that in the year 2018? Keep 1 decimal places.
 #     Use the output dataframe, Vol_Ret_mrg_df, and auxiliary function in this script
 #     to do the calculation.
-ret_dict = etl._test_aj_ret_dict(tickers=['v'], start='2007-01-01', end='2019-12-31')
+'''ret_dict = etl._test_aj_ret_dict(tickers=['v'], start='2007-01-01', end='2019-12-31')
 charc = cha.cha_main(ret_dict, 'vol', ['Daily',])
 print(charc.loc[charc.index.year == 2008]['v_vol'].mean())
-print(charc.loc[charc.index.year == 2018]['v_vol'].mean())
-Q6_ANSWER = '2.4'
+print(charc.loc[charc.index.year == 2018]['v_vol'].mean())'''
+Q6_ANSWER = '2.6'
 
 
 # Q7: How many effective year-month for stock 'TSLA' in year 2010. An effective year-month
@@ -322,14 +322,14 @@ Q6_ANSWER = '2.4'
 #     Answer should be an integer
 '''print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla_vol'])
 print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla'])'''
-Q7_ANSWER = '6'
+Q7_ANSWER = '5'
 
 
 # Q8: How many rows and columns in the EW_LS_pf_df data frame?
 #     Answer should be two integer, the first represent number of rows and the two numbers need to be
 #     separated by a comma.
 # print(EW_LS_pf_df.shape)
-Q8_ANSWER = '236,4'
+Q8_ANSWER = '235,4'
 
 
 # Q9: What is the average equal weighted portfolio return of the quantile with the
@@ -338,7 +338,7 @@ Q8_ANSWER = '236,4'
 #     to do the calculation.
 '''print(EW_LS_pf_df[EW_LS_pf_df.index.year == 2019])
 print(get_avg(EW_LS_pf_df, 2019))'''
-Q9_ANSWER = '0.02690'
+Q9_ANSWER = '0.01955'
 
 
 # Q10: What is the cumulative portfolio return of the total volatility long-short portfolio
@@ -346,7 +346,7 @@ Q9_ANSWER = '0.02690'
 #      Use the output dataframe, EW_LS_pf_d, and auxiliary function in this script
 #     to do the calculation.
 # print(get_cumulative_ret(EW_LS_pf_df))
-Q10_ANSWER = '10.4127'
+Q10_ANSWER = '2.1159'
 
 
 # ----------------------------------------------------------------------------
@@ -368,9 +368,9 @@ Q10_ANSWER = '10.4127'
 # Please replace the '?' of ls_bar, ls_t and n_obs variables below
 # with the respective values of the 'ls' column in EW_LS_pf_df from Part 8,
 # keep 4 decimal places if it is not an integer:
-ls_bar = '2.4802'
-ls_t = '0.01402'
-n_obs = '236'
+ls_bar = '1.5311'
+ls_t = '0.0081'
+n_obs = '235'
 # ls_bar = '0.0073'
 # ls_t = '1.3847'
 # n_obs = '235'
@@ -390,8 +390,8 @@ def t_stat(sample, test_average):
     ls_bar = sample.mean()
     n_obs = sample.shape[0]
     ls_t = ttest_1samp(sample, test_average).__getattribute__('statistic')
-    # print(ls_t, ls_bar, n_obs)
-t_stat(EW_LS_pf_df['ls'], 0)
+    print(ls_t, ls_bar, n_obs)
+# t_stat(EW_LS_pf_df['ls'], 0)
 # ----------------------------------------------------------------------------
 # Part 10: share your team's project 2 git log
 # ----------------------------------------------------------------------------
