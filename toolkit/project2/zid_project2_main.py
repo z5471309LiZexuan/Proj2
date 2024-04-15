@@ -368,8 +368,8 @@ Q10_ANSWER = '2.1159'
 # Please replace the '?' of ls_bar, ls_t and n_obs variables below
 # with the respective values of the 'ls' column in EW_LS_pf_df from Part 8,
 # keep 4 decimal places if it is not an integer:
-ls_bar = '1.5311'
-ls_t = '0.0081'
+ls_bar = '0.0081'
+ls_t = '1.5311'
 n_obs = '235'
 # ls_bar = '0.0073'
 # ls_t = '1.3847'
@@ -390,8 +390,8 @@ def t_stat(sample, test_average):
     ls_bar = sample.mean()
     n_obs = sample.shape[0]
     ls_t = ttest_1samp(sample, test_average).__getattribute__('statistic')
-    print(ls_t, ls_bar, n_obs)
-# t_stat(EW_LS_pf_df['ls'], 0)
+    print(ls_bar, ls_t, n_obs)
+t_stat(EW_LS_pf_df['ls'], 0)
 # ----------------------------------------------------------------------------
 # Part 10: share your team's project 2 git log
 # ----------------------------------------------------------------------------
