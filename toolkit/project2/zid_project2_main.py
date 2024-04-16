@@ -174,7 +174,7 @@ def get_avg(df: pd.DataFrame, year):
         dtype: float64
 
     """
-    # <COMPLETE THIS PART>
+
     df = df.copy()
     df.fillna(0, inplace=True)
     # print(' # ' * 10); print(df)
@@ -207,7 +207,7 @@ def get_cumulative_ret(df):
         where r1, ..., rN represents monthly returns
 
     """
-    # <COMPLETE THIS PART>
+
     df = df.copy()
     df.fillna(0, inplace=True)
     shit = df.copy()
