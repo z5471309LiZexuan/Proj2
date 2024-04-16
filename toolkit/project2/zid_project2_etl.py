@@ -361,8 +361,6 @@ def monthly_return_cal(prc):
     # <COMPLETE THIS PART>
     prc = prc.copy().to_frame()
     shit = prc.set_index(pd.DatetimeIndex(pd.to_datetime(prc.index)))
-    # print(' # ' * 20); print(shit); print(' # ' * 20)
-    # print(prc.columns)
     try:
         verify_shit = shit.resample('M').agg({'Adj Close': 'count'})
         # print(verify_shit)
