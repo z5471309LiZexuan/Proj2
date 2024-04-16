@@ -21,7 +21,7 @@
 # Create import statements so that the module config.py and util.py (inside the project2 package)
 # are imported as "cfg", and "util"
 #
-# <COMPLETE THIS PART>
+
 import numpy as np
 
 import util
@@ -174,7 +174,7 @@ def get_avg(df: pd.DataFrame, year):
         dtype: float64
 
     """
-    # <COMPLETE THIS PART>
+
     df = df.copy()
     df.fillna(0, inplace=True)
     # print(' # ' * 10); print(df)
@@ -207,7 +207,7 @@ def get_cumulative_ret(df):
         where r1, ..., rN represents monthly returns
 
     """
-    # <COMPLETE THIS PART>
+
     df = df.copy()
     df.fillna(0, inplace=True)
     shit = df.copy()
@@ -217,6 +217,7 @@ def get_cumulative_ret(df):
             r *= (1 + df.iloc[i, j])
         shit.iloc[0, j] = r - 1
     return shit.iloc[0, :]
+
 
 
 # ----------------------------------------------------------------------------
@@ -279,6 +280,7 @@ Q1_ANSWER = 'NVDA'
 Q2_ANSWER = '-0.004241'
 
 
+
 # Q3: Which stock in your sample has the highest average monthly return for the
 #     year 2019 (ignoring missing values)? Your answer should include the
 #     ticker for this stock.
@@ -323,6 +325,8 @@ Q6_ANSWER = '2.6'
 '''print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla_vol'])
 print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla'])'''
 Q7_ANSWER = '5'
+
+
 
 
 # Q8: How many rows and columns in the EW_LS_pf_df data frame?

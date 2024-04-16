@@ -9,6 +9,9 @@
 # Note: please keep the aliases consistent throughout the project.
 #       For details, review the import statements in zid_project2_main.py
 
+
+
+
 # <COMPLETE THIS PART>
 import util
 import pandas as pd
@@ -100,7 +103,7 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
        'aaa.csv' are different files).
 
     """
-    # <COMPLETE THIS PART>
+
     '''csv = pd.read_csv('data/' + tic.lower() + '_prc.csv', index_col=['Date'])
         csv = csv[prc_col.split(',')]
         csv.sort_index(inplace=True)
@@ -570,6 +573,7 @@ def _test_monthly_return_cal(made_up_data=True, ser_prc=None):
     msg = 'This is the test ser `prc`:'
     util.test_print(prc, msg)
 
+
     res_monthly = monthly_return_cal(prc)
     msg = "This means `res_monthly = monthly_return_cal(prc)`, print out res_monthly:"
     util.test_print(res_monthly, msg)
@@ -587,6 +591,7 @@ def _test_aj_ret_dict(tickers, start, end):
 
 if __name__ == "__main__":
     pass
+
     # #test read_prc_csv function
     # _test_read_prc_csv()
 
