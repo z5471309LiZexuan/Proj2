@@ -280,6 +280,7 @@ Q1_ANSWER = 'NVDA'
 Q2_ANSWER = '-0.004241'
 
 
+
 # Q3: Which stock in your sample has the highest average monthly return for the
 #     year 2019 (ignoring missing values)? Your answer should include the
 #     ticker for this stock.
