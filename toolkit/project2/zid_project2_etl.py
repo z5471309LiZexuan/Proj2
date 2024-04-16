@@ -11,7 +11,6 @@
 
 # <COMPLETE THIS PART>
 import util
-import time
 import pandas as pd
 import datetime
 
@@ -102,63 +101,70 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
 
     """
     # <COMPLETE THIS PART>
-    csv = pd.read_csv('data/' + tic.lower() + '_prc.csv', index_col=['Date'])
-    csv = csv[prc_col.split(',')]
-    csv.sort_index(inplace=True)
-    # print(csv.index.is_monotonic_increasing)
-    ind = csv.index
-    s = 0
-    e = len(ind)
-    stop = False
-    shit = True
-    if int(ind[0][:4]) > int(end[:4]):
-        e = 0
-        shit = False
-    elif int(ind[0][:4]) == int(end[:4]):
-        if int(ind[0][5:7]) > int(end[5:7]):
+    '''csv = pd.read_csv('data/' + tic.lower() + '_prc.csv', index_col=['Date'])
+        csv = csv[prc_col.split(',')]
+        csv.sort_index(inplace=True)
+        # print(csv.index.is_monotonic_increasing)
+        ind = csv.index
+        s = 0
+        e = len(ind)
+        stop = False
+        shit = True
+        if int(ind[0][:4]) > int(end[:4]):
             e = 0
             shit = False
-        elif int(ind[0][5:7]) == int(end[5:7]):
-            if int(ind[0][8:10]) > int(end[8:10]):
+        elif int(ind[0][:4]) == int(end[:4]):
+            if int(ind[0][5:7]) > int(end[5:7]):
                 e = 0
                 shit = False
-    if shit:
-        for i in range(len(ind)):
-            date = ind[i]
-            if not stop:
-                if int(date[:4]) > int(start[:4]):
+            elif int(ind[0][5:7]) == int(end[5:7]):
+                if int(ind[0][8:10]) > int(end[8:10]):
+                    e = 0
+                    shit = False
+        if shit:
+            for i in range(len(ind)):
+                date = ind[i]
+                if not stop:
+                    if int(date[:4]) > int(start[:4]):
 
-                    s = i
-                    stop = True
-                elif int(date[:4]) == int(start[:4]):
-                    if int(date[5:7]) > int(start[5:7]):
                         s = i
                         stop = True
-
-                    elif int(date[5:7]) == int(start[5:7]):
-                        if int(date[8:10]) >= int(start[8:10]):
+                    elif int(date[:4]) == int(start[:4]):
+                        if int(date[5:7]) > int(start[5:7]):
                             s = i
                             stop = True
-            if stop:
-                if int(date[:4]) > int(end[:4]):
-                    e = i
-                    break
-                elif int(date[:4]) == int(end[:4]):
-                    if int(date[5:7]) > int(end[5:7]):
+
+                        elif int(date[5:7]) == int(start[5:7]):
+                            if int(date[8:10]) >= int(start[8:10]):
+                                s = i
+                                stop = True
+                if stop:
+                    if int(date[:4]) > int(end[:4]):
                         e = i
                         break
-                    elif int(date[5:7]) == int(end[5:7]):
-                        if int(date[8:10]) >= int(end[8:10]):
-                            # print(end[8:10])
-                            if date == end:
-                                e = i + 1
-                            else:
-                                e = i
+                    elif int(date[:4]) == int(end[:4]):
+                        if int(date[5:7]) > int(end[5:7]):
+                            e = i
                             break
+                        elif int(date[5:7]) == int(end[5:7]):
+                            if int(date[8:10]) >= int(end[8:10]):
+                                # print(end[8:10])
+                                if date == end:
+                                    e = i + 1
+                                else:
+                                    e = i
+                                break
 
-    csv = csv.iloc[s:e, 0]
-    csv.index = pd.to_datetime(csv.index)
-    return csv
+        csv = csv.iloc[s:e, 0]
+        csv.index = pd.to_datetime(csv.index)
+        return csv'''
+    csv = pd.read_csv('data/' + tic.lower() + '_prc.csv', index_col=['Date'], parse_dates=['Date'])
+    csv.sort_index(inplace=True)
+    df = csv[prc_col].loc[start:end]
+    df.name = tic.lower()
+    return df
+
+
 
 # ----------------------------------------------------------------------------
 # Part 4.3: Complete the daily_return_cal function
@@ -589,13 +595,13 @@ if __name__ == "__main__":
     # # use made-up series to test daily_return_cal function
     # _test_daily_return_cal()
     # # use AAPL prc series to test daily_return_cal function
-    # ser_price = read_prc_csv(tic='AAPL', start='2020-09-03', end='2020-09-09')
+    # ser_price = read_prc_csv(tic='AAPL', start='2020-09-05', end='2020-09-12')
     # _test_daily_return_cal(made_up_data=False, ser_prc=ser_price)
     #
     # # use made-up series to test daily_return_cal function
     # _test_monthly_return_cal()
     # # use AAPL prc series to test daily_return_cal function
-    # ser_price = read_prc_csv(tic='AAPL', start='2020-08-31', end='2021-01-10')
+    # ser_price = read_prc_csv(tic='AAPL', start='2020-09-03', end='2020-09-14')
     # _test_monthly_return_cal(made_up_data=False, ser_prc=ser_price)
     # # test aj_ret_dict function
     # _test_aj_ret_dict(['AAPL', 'aal'], start='2017-12-15', end='2020-08-05')

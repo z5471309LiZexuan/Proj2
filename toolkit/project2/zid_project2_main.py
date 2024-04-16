@@ -299,8 +299,8 @@ Q4_ANSWER = '0.05664'
 # Q5: What is the average monthly total volatility for stock 'TSLA' in the year 2010?
 #     Use the output dataframe, Vol_Ret_mrg_df, and auxiliary function in this script
 #     to do the calculation.
-'''Vol_Ret_mrg_df['tsla_vol'].to_csv('1.csv')
-print(get_avg(Vol_Ret_mrg_df, 2010))'''
+# Vol_Ret_mrg_df['tsla_vol'].to_csv('1.csv')
+# print(get_avg(Vol_Ret_mrg_df, 2010))
 Q5_ANSWER = '0.01725'
 
 
@@ -391,7 +391,7 @@ def t_stat(sample, test_average):
     n_obs = sample.shape[0]
     ls_t = ttest_1samp(sample, test_average).__getattribute__('statistic')
     print(ls_bar, ls_t, n_obs)
-t_stat(EW_LS_pf_df['ls'], 0)
+# t_stat(EW_LS_pf_df['ls'], 0)
 # ----------------------------------------------------------------------------
 # Part 10: share your team's project 2 git log
 # ----------------------------------------------------------------------------
