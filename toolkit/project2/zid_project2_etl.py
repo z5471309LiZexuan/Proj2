@@ -583,7 +583,6 @@ def _test_aj_ret_dict(tickers, start, end):
 
     msg = "This means `dict_ret = aj_ret_dict(tickers, start, end)`, print out dict_ret:"
     util.test_print(dict_ret, msg)
-
     return dict_ret
 
 
