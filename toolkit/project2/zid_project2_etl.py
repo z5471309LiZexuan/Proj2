@@ -359,7 +359,6 @@ def monthly_return_cal(prc):
 
     """
     # <COMPLETE THIS PART>
-
     prc = prc.copy().to_frame()
     shit = prc.set_index(pd.DatetimeIndex(pd.to_datetime(prc.index)))
     try:
