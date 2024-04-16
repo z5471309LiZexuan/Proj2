@@ -207,7 +207,7 @@ def get_cumulative_ret(df):
         where r1, ..., rN represents monthly returns
 
     """
-    # <COMPLETE THIS PART>
+
     df = df.copy()
     df.fillna(0, inplace=True)
     shit = df.copy()
