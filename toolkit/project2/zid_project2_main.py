@@ -314,6 +314,7 @@ print(charc.loc[charc.index.year == 2008]['v_vol'].mean())
 print(charc.loc[charc.index.year == 2018]['v_vol'].mean())'''
 Q6_ANSWER = '2.6'
 
+
 # Q7: How many effective year-month for stock 'TSLA' in year 2010. An effective year-month
 #     row means both monthly return in 'tsla' column and total volatility in 'tsla_vol'
 #     are not null.
