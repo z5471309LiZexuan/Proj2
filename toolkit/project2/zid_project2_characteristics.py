@@ -153,7 +153,6 @@ def vol_cal(ret, cha_name, ret_freq_use: list):
     for r in ret_freq_use:
         if r == 'Daily':
             shit = ret[r].copy()
-            # shit['tsla'].to_csv('2.csv')
             shit = shit.set_index(pd.DatetimeIndex(pd.to_datetime(shit.index)))
             period_shit = shit.groupby(shit.index.to_period('M')).std()
             # period_shit['tsla'].to_csv('1.csv')
