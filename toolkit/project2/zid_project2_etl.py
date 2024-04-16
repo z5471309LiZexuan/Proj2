@@ -353,6 +353,7 @@ def monthly_return_cal(prc):
         memory usage: 16.0 bytes
         ----------------------------------------
 
+
     Hints
      -----
      - Ensure that the returns do not contain any entries with null values.
