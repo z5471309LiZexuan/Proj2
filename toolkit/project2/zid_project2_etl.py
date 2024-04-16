@@ -100,7 +100,7 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
        'aaa.csv' are different files).
 
     """
-    # <COMPLETE THIS PART>
+
     '''csv = pd.read_csv('data/' + tic.lower() + '_prc.csv', index_col=['Date'])
         csv = csv[prc_col.split(',')]
         csv.sort_index(inplace=True)
