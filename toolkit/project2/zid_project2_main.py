@@ -21,7 +21,7 @@
 # Create import statements so that the module config.py and util.py (inside the project2 package)
 # are imported as "cfg", and "util"
 #
-# <COMPLETE THIS PART>
+
 import numpy as np
 
 import util
@@ -217,6 +217,7 @@ def get_cumulative_ret(df):
             r *= (1 + df.iloc[i, j])
         shit.iloc[0, j] = r - 1
     return shit.iloc[0, :]
+
 
 
 # ----------------------------------------------------------------------------
