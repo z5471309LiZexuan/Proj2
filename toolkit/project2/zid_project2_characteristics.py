@@ -280,7 +280,7 @@ def merge_tables(ret, df_cha, cha_name):
     return shit
 
 # ------------------------------------------------------------------------------------
-# Part 5.2: Read the cha_main function and understand the workflow in this script
+# Part 5，2: Read the cha_main function and understand the workflow in this script
 # ------------------------------------------------------------------------------------
 def cha_main(ret, cha_name, ret_freq_use: list):
     """Function to show work flow. This script is to calculate stock total volatility
