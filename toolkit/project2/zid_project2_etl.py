@@ -357,6 +357,8 @@ def monthly_return_cal(prc):
         ----------------------------------------
 
 
+
+
     Hints
      -----
      - Ensure that the returns do not contain any entries with null values.
