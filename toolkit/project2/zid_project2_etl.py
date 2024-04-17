@@ -9,6 +9,9 @@
 # Note: please keep the aliases consistent throughout the project.
 #       For details, review the import statements in zid_project2_main.py
 
+
+
+
 # <COMPLETE THIS PART>
 import util
 import pandas as pd
@@ -353,6 +356,9 @@ def monthly_return_cal(prc):
         memory usage: 16.0 bytes
         ----------------------------------------
 
+
+
+
     Hints
      -----
      - Ensure that the returns do not contain any entries with null values.
@@ -361,8 +367,6 @@ def monthly_return_cal(prc):
     # <COMPLETE THIS PART>
     prc = prc.copy().to_frame()
     shit = prc.set_index(pd.DatetimeIndex(pd.to_datetime(prc.index)))
-    # print(' # ' * 20); print(shit); print(' # ' * 20)
-    # print(prc.columns)
     try:
         verify_shit = shit.resample('M').agg({'Adj Close': 'count'})
         # print(verify_shit)
@@ -588,6 +592,7 @@ def _test_aj_ret_dict(tickers, start, end):
 
 if __name__ == "__main__":
     pass
+
     # #test read_prc_csv function
     # _test_read_prc_csv()
 

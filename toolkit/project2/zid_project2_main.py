@@ -21,7 +21,7 @@
 # Create import statements so that the module config.py and util.py (inside the project2 package)
 # are imported as "cfg", and "util"
 #
-# <COMPLETE THIS PART>
+
 import numpy as np
 
 import util
@@ -219,6 +219,7 @@ def get_cumulative_ret(df):
     return shit.iloc[0, :]
 
 
+
 # ----------------------------------------------------------------------------
 # Part 8: Answer questions
 # ----------------------------------------------------------------------------
@@ -279,6 +280,7 @@ Q1_ANSWER = 'NVDA'
 Q2_ANSWER = '-0.004241'
 
 
+
 # Q3: Which stock in your sample has the highest average monthly return for the
 #     year 2019 (ignoring missing values)? Your answer should include the
 #     ticker for this stock.
@@ -323,6 +325,8 @@ Q6_ANSWER = '2.6'
 '''print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla_vol'])
 print(Vol_Ret_mrg_df[Vol_Ret_mrg_df.index.year == 2010]['tsla'])'''
 Q7_ANSWER = '5'
+
+
 
 
 # Q8: How many rows and columns in the EW_LS_pf_df data frame?
