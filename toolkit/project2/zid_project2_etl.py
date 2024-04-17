@@ -167,7 +167,7 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
 
 
 # ----------------------------------------------------------------------------
-# Part 4.3: Complete the daily_return_cal function
+# Part 4.3: Complete The daily_return_cal Function
 # ----------------------------------------------------------------------------
 def daily_return_cal(prc):
     """ Create a pandas series containing daily returns for an individual stock,
