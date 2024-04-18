@@ -21,6 +21,7 @@ import sys
 # ----------------------------------------------------------------------------------------
 
 def vol_input_sanity_check(ret, cha_name, ret_freq_use: list):
+
     """
     Performs sanity checks on the inputs provided for calculating stock characteristics.
 
@@ -333,7 +334,6 @@ def cha_main(ret, cha_name, ret_freq_use: list):
     shit = merge_tables(ret, volume_calculate, cha_name)
 
     return shit
-
 
 def _test_ret_dict_gen():
     """ Function for generating made-up dictionary output from etl.py.
