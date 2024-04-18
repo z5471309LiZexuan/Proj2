@@ -501,6 +501,7 @@ def aj_ret_dict(tickers, start, end):
         ----------------------------------------
     """
     # <COMPLETE THIS PART>
+
     try:
         datetime.datetime.strptime(start, '%Y-%m-%d')
         datetime.datetime.strptime(end, '%Y-%m-%d')
