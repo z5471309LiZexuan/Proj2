@@ -395,7 +395,9 @@ def t_stat(sample, test_average):
     ls_bar = sample.mean()
     n_obs = sample.shape[0]
     ls_t = ttest_1samp(sample, test_average).__getattribute__('statistic')
-    print(ls_bar, ls_t, n_obs)
+    print('This is the ls_bar value, or the average value: ' + str(ls_bar))
+    print('This is the n_obs value, or the number of observation: ' + str(n_obs))
+    print('This is the ls_t value, or the t-stats value: ' + str(ls_t))
 # t_stat(EW_LS_pf_df['ls'], 0)
 # ----------------------------------------------------------------------------
 # Part 10: share your team's project 2 git log
