@@ -182,6 +182,7 @@ def get_avg(df: pd.DataFrame, year):
     return average_by_year
 
 def get_cumulative_ret(df):
+
     """ Returns cumulative returns for input DataFrame.
 
     Given a df with return series, this function will return the
@@ -393,7 +394,9 @@ def t_stat(sample, test_average):
     ls_bar = sample.mean()
     n_obs = sample.shape[0]
     ls_t = ttest_1samp(sample, test_average).__getattribute__('statistic')
-    print(ls_bar, ls_t, n_obs)
+    print('This is the ls_bar value, or the average value: ' + str(ls_bar))
+    print('This is the n_obs value, or the number of observation: ' + str(n_obs))
+    print('This is the ls_t value, or the t-stats value: ' + str(ls_t))
 # t_stat(EW_LS_pf_df['ls'], 0)
 # ----------------------------------------------------------------------------
 # Part 10: share your team's project 2 git log
@@ -499,7 +502,6 @@ def _test_get_cumulative_ret():
         f"The value of `res` is {res}",
     ]
     util.test_print('\n'.join(to_print))
-
 
 if __name__ == "__main__":
 

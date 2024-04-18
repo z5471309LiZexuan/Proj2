@@ -170,7 +170,7 @@ def read_prc_csv(tic, start, end, prc_col='Adj Close'):
 
 
 # ----------------------------------------------------------------------------
-# Part 4.3: Complete the daily_return_cal function
+# Part 4.3: Complete The daily_return_cal Function
 # ----------------------------------------------------------------------------
 def daily_return_cal(prc):
     """ Create a pandas series containing daily returns for an individual stock,
@@ -502,6 +502,7 @@ def aj_ret_dict(tickers, start, end):
         ----------------------------------------
     """
     # <COMPLETE THIS PART>
+
     try:
         datetime.datetime.strptime(start, '%Y-%m-%d')
         datetime.datetime.strptime(end, '%Y-%m-%d')
@@ -574,7 +575,6 @@ def _test_monthly_return_cal(made_up_data=True, ser_prc=None):
     msg = 'This is the test ser `prc`:'
     util.test_print(prc, msg)
 
-
     res_monthly = monthly_return_cal(prc)
     msg = "This means `res_monthly = monthly_return_cal(prc)`, print out res_monthly:"
     util.test_print(res_monthly, msg)
@@ -592,7 +592,6 @@ def _test_aj_ret_dict(tickers, start, end):
 
 if __name__ == "__main__":
     pass
-
     # #test read_prc_csv function
     # _test_read_prc_csv()
 
