@@ -502,7 +502,6 @@ def _test_get_cumulative_ret():
     ]
     util.test_print('\n'.join(to_print))
 
-
 if __name__ == "__main__":
 
     pass

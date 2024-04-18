@@ -575,7 +575,6 @@ def _test_monthly_return_cal(made_up_data=True, ser_prc=None):
     msg = 'This is the test ser `prc`:'
     util.test_print(prc, msg)
 
-
     res_monthly = monthly_return_cal(prc)
     msg = "This means `res_monthly = monthly_return_cal(prc)`, print out res_monthly:"
     util.test_print(res_monthly, msg)
