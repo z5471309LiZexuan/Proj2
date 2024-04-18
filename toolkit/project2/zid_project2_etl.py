@@ -526,6 +526,7 @@ def aj_ret_dict(tickers, start, end):
 
 
 def _test_read_prc_csv():
+
     """ Test function for `read_prc_csv`
     """
     tic = 'AAPL'

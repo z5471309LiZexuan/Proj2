@@ -183,6 +183,7 @@ def get_avg(df: pd.DataFrame, year):
 
 
 def get_cumulative_ret(df):
+
     """ Returns cumulative returns for input DataFrame.
 
     Given a df with return series, this function will return the

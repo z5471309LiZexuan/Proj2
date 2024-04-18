@@ -21,6 +21,7 @@ import sys
 # ----------------------------------------------------------------------------------------
 
 def vol_input_sanity_check(ret, cha_name, ret_freq_use: list):
+
     """
     Performs sanity checks on the inputs provided for calculating stock characteristics.
 
