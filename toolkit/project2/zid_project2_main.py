@@ -181,7 +181,6 @@ def get_avg(df: pd.DataFrame, year):
     average_by_year = df[df.index.year == year].mean()
     return average_by_year
 
-
 def get_cumulative_ret(df):
     """ Returns cumulative returns for input DataFrame.
 
